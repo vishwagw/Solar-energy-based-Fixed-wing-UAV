@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Solar Panel to Motor Wiring Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2563eb;
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1e40af;
+            border-left: 4px solid #3b82f6;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+        .wiring-diagram {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .component {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            color: white;
+        }
+        .solar { background: #1e40af; }
+        .esc { background: #7c3aed; }
+        .motor { background: #dc2626; }
+        .power-mgmt { background: #059669; }
+        .wire {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        .wire-red { color: #dc2626; }
+        .wire-black { color: #374151; }
+        .wire-yellow { color: #d97706; }
+        .safety-box {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning {
+            background: #fee2e2;
+            border: 2px solid #ef4444;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .step {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #f3f4f6;
+            font-weight: bold;
+        }
+        .measurement-table {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔌 Direct Solar Panel to Motor Wiring Plan</h1>
+        
+        <div class="warning">
+            <strong>⚠️ SAFETY FIRST:</strong>
+            <ul>
+                <li>Test in controlled environment only</li>
+                <li>Have fire extinguisher nearby</li>
+                <li>Wear safety glasses</li>
+                <li>Secure propeller or remove it entirely for initial tests</li>
+                <li>Never leave test setup unattended</li>
+            </ul>
+        </div>
+
+        <h2>🔗 Simplified Wiring Diagram</h2>
+        <div class="wiring-diagram">
+            <div class="component solar">Solar Panel 1<br>5V</div>
+            <span class="wire wire-red">━━━</span>
+            <div class="component power-mgmt">Power<br>Management</div>
+            <span class="wire wire-red">━━━</span>
+            <div class="component esc">ESC<br>(20A-30A)</div>
+            <span class="wire wire-yellow">━━━</span>
+            <div class="component motor">1200kV<br>Motor</div>
+            <br><br>
+            <div class="component solar">Solar Panel 2<br>5V</div>
+            <span class="wire wire-red">━━━</span>
+            <span style="font-size: 14px;">↗</span>
+            <br><br>
+            <div style="margin-top: 20px;">
+                <span class="wire wire-black">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span><br>
+                <span style="font-size: 12px;">Ground/Negative Bus</span>
+            </div>
+        </div>
+
+        <h2>📋 Step-by-Step Wiring Instructions</h2>
+
+        <div class="step">
+            <strong>Step 1: Prepare Solar Panel Configuration</strong>
+            <ul>
+                <li><strong>Series Connection (10V output):</strong></li>
+                <li>Connect Solar Panel 1 POSITIVE → Solar Panel 2 NEGATIVE</li>
+                <li>Use: Solar Panel 1 NEGATIVE and Solar Panel 2 POSITIVE as your main outputs</li>
+                <li>Wire gauge: 16-18 AWG for solar connections</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <strong>Step 2: Power Management Bypass</strong>
+            <ul>
+                <li>Disconnect battery from power management unit</li>
+                <li>Solar Panel OUTPUT POSITIVE → Power Management INPUT</li>
+                <li>Solar Panel OUTPUT NEGATIVE → Power Management GROUND</li>
+                <li>Keep voltage regulation circuitry active</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <strong>Step 3: ESC Connection</strong>
+            <ul>
+                <li>Power Management OUTPUT POSITIVE → ESC POSITIVE (Red wire)</li>
+                <li>Power Management OUTPUT NEGATIVE → ESC NEGATIVE (Black wire)</li>
+                <li>Arduino PWM Signal → ESC Signal Wire (typically white/yellow)</li>
+                <li>Wire gauge: 14-16 AWG for motor power lines</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <strong>Step 4: Motor Connection</strong>
+            <ul>
+                <li>ESC Motor Outputs → Motor (3 wires for brushless)</li>
+                <li>No polarity concern for brushless motor</li>
+                <li>Secure all connections with proper connectors</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <strong>Step 5: Control Signal</strong>
+            <ul>
+                <li>Arduino D3 (PWM) → ESC Signal Wire</li>
+                <li>Arduino GND → ESC Ground (signal ground)</li>
+                <li>Arduino powered separately (USB or separate 5V supply)</li>
+            </ul>
+        </div>
+
+        <h2>🔌 Detailed Connection Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>From Component</th>
+                    <th>Wire Color</th>
+                    <th>To Component</th>
+                    <th>Connection Point</th>
+                    <th>Wire Gauge</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Solar Panel 1 (+)</td>
+                    <td>Red</td>
+                    <td>Solar Panel 2 (-)</td>
+                    <td>Series Connection</td>
+                    <td>18 AWG</td>
+                </tr>
+                <tr>
+                    <td>Solar Panel 1 (-)</td>
+                    <td>Black</td>
+                    <td>Power Management</td>
+                    <td>Ground Input</td>
+                    <td>18 AWG</td>
+                </tr>
+                <tr>
+                    <td>Solar Panel 2 (+)</td>
+                    <td>Red</td>
+                    <td>Power Management</td>
+                    <td>Positive Input</td>
+                    <td>18 AWG</td>
+                </tr>
+                <tr>
+                    <td>Power Management (+)</td>
+                    <td>Red</td>
+                    <td>ESC</td>
+                    <td>Power Input (+)</td>
+                    <td>16 AWG</td>
+                </tr>
+                <tr>
+                    <td>Power Management (-)</td>
+                    <td>Black</td>
+                    <td>ESC</td>
+                    <td>Power Input (-)</td>
+                    <td>16 AWG</td>
+                </tr>
+                <tr>
+                    <td>ESC Motor Wire 1</td>
+                    <td>Blue/Red</td>
+                    <td>Motor</td>
+                    <td>Phase A</td>
+                    <td>14 AWG</td>
+                </tr>
+                <tr>
+                    <td>ESC Motor Wire 2</td>
+                    <td>Yellow/White</td>
+                    <td>Motor</td>
+                    <td>Phase B</td>
+                    <td>14 AWG</td>
+                </tr>
+                <tr>
+                    <td>ESC Motor Wire 3</td>
+                    <td>Black/Green</td>
+                    <td>Motor</td>
+                    <td>Phase C</td>
+                    <td>14 AWG</td>
+                </tr>
+                <tr>
+                    <td>Arduino D3</td>
+                    <td>White/Yellow</td>
+                    <td>ESC</td>
+                    <td>Signal Wire</td>
+                    <td>22 AWG</td>
+                </tr>
+                <tr>
+                    <td>Arduino GND</td>
+                    <td>Black</td>
+                    <td>ESC</td>
+                    <td>Signal Ground</td>
+                    <td>22 AWG</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>⚡ Power Calculations</h2>
+        <div class="measurement-table">
+            <strong>Expected Solar Output:</strong>
+            <ul>
+                <li>2x 5V panels in series = 10V nominal</li>
+                <li>Estimated current per panel: 0.5-2A (depending on size/efficiency)</li>
+                <li>Total power available: 5-20 watts peak</li>
+                <li>Motor power requirement: 50-200 watts for normal operation</li>
+            </ul>
+            
+            <strong>Reality Check:</strong>
+            <p style="color: #dc2626;"><strong>Your solar panels will likely only provide enough power for very slow motor speeds.</strong> This is perfect for proving the concept but shows why battery backup is essential.</p>
+        </div>
+
+        <h2>🧪 Test Procedure</h2>
+
+        <div class="step">
+            <strong>Initial Setup:</strong>
+            <ol>
+                <li>Mount solar panels facing bright light source</li>
+                <li>Connect all wiring as per table above</li>
+                <li>Set ESC to lowest throttle setting</li>
+                <li>Have multimeter ready to monitor voltage/current</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <strong>Power-On Test:</strong>
+            <ol>
+                <li>Measure open-circuit voltage from solar panels</li>
+                <li>Connect load and measure voltage under load</li>
+                <li>Gradually increase ESC throttle</li>
+                <li>Record motor response vs solar conditions</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <strong>Variability Test:</strong>
+            <ol>
+                <li>Cover/uncover panels to simulate clouds</li>
+                <li>Change panel angle to sun</li>
+                <li>Document motor speed variations</li>
+                <li>Measure recovery time when light returns</li>
+            </ol>
+        </div>
+
+        <h2>🔧 Required Components for Test</h2>
+        <ul>
+            <li><strong>Wire:</strong> 16-18 AWG stranded for power, 22 AWG for signals</li>
+            <li><strong>Connectors:</strong> XT30 or XT60 for power connections</li>
+            <li><strong>Multimeter:</strong> For voltage/current monitoring</li>
+            <li><strong>Breadboard jumpers:</strong> For temporary Arduino connections</li>
+            <li><strong>Heat shrink tubing:</strong> For secure connections</li>
+            <li><strong>Electrical tape:</strong> For insulation</li>
+        </ul>
+
+        <div class="safety-box">
+            <strong>🛡️ Testing Safety Notes:</strong>
+            <ul>
+                <li>Remove propeller for all initial tests</li>
+                <li>Secure motor to prevent movement</li>
+                <li>Monitor for overheating in ESC/motor</li>
+                <li>Have manual disconnect switch ready</li>
+                <li>Test with low throttle settings first</li>
+            </ul>
+        </div>
+
+        <h2>📊 Expected Test Results</h2>
+        <div class="measurement-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Light Condition</th>
+                        <th>Expected Voltage</th>
+                        <th>Expected Current</th>
+                        <th>Motor Response</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bright Direct Sun</td>
+                        <td>9-10V</td>
+                        <td>1-2A</td>
+                        <td>Slow-Medium Speed</td>
+                    </tr>
+                    <tr>
+                        <td>Cloudy/Indirect</td>
+                        <td>6-8V</td>
+                        <td>0.3-0.8A</td>
+                        <td>Very Slow/Stuttering</td>
+                    </tr>
+                    <tr>
+                        <td>Shade</td>
+                        <td>2-4V</td>
+                        <td>0.1-0.3A</td>
+                        <td>No Movement</td>
+                    </tr>
+                    <tr>
+                        <td>Indoor LED (1000W)</td>
+                        <td>7-9V</td>
+                        <td>0.8-1.5A</td>
+                        <td>Slow-Medium Speed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>📝 Data Collection Sheet</h2>
+        <div class="measurement-table">
+            <p><strong>Record these measurements every 30 seconds:</strong></p>
+            <ul>
+                <li>Solar Panel Voltage (V)</li>
+                <li>Current Draw (A)</li>
+                <li>Motor RPM (if tachometer available)</li>
+                <li>Light Intensity (subjective: Bright/Medium/Low)</li>
+                <li>Motor Sound/Vibration Quality</li>
+                <li>ESC Temperature (touch test)</li>
+            </ul>
+        </div>
+
+        <div class="safety-box">
+            <strong>🎯 Success Criteria:</strong>
+            <p>This test successfully proves solar viability if:</p>
+            <ul>
+                <li>Motor spins consistently in bright light</li>
+                <li>Speed varies proportionally with light intensity</li>
+                <li>No overheating or electrical issues</li>
+                <li>System recovers quickly when light returns after interruption</li>
+            </ul>
+        </div>
+
+        <h2>🔄 Next Steps After Testing</h2>
+        <p>Once you've proven direct solar capability, you can:</p>
+        <ul>
+            <li>Reconnect battery system for hybrid operation</li>
+            <li>Test solar charging while motor runs on battery</li>
+            <li>Implement MPPT for better solar efficiency</li>
+            <li>Scale up solar array for increased power</li>
+        </ul>
+    </div>
+</body>
+</html>
