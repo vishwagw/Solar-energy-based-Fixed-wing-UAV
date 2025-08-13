@@ -1,0 +1,232 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+     refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Grid background -->
+  <rect width="1200" height="800" fill="url(#grid)"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Fixed Wing Drone - Technical Schematic</text>
+  
+  <!-- Wing outline -->
+  <path d="M 200 300 Q 300 280 400 290 L 800 290 Q 900 280 1000 300 L 950 320 Q 900 340 800 330 L 400 330 Q 300 340 250 320 Z" 
+        fill="none" stroke="#2c3e50" stroke-width="2"/>
+  
+  <!-- Fuselage -->
+  <rect x="550" y="280" width="100" height="60" fill="none" stroke="#2c3e50" stroke-width="2"/>
+  <path d="M 650 300 L 700 310 L 700 330 L 650 320 Z" fill="none" stroke="#2c3e50" stroke-width="2"/>
+  
+  <!-- Arduino Uno -->
+  <rect x="560" y="290" width="80" height="40" fill="#006837" stroke="#000" stroke-width="1"/>
+  <text x="600" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Arduino</text>
+  <text x="600" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Uno</text>
+  
+  <!-- Pin labels for Arduino -->
+  <circle cx="565" cy="295" r="2" fill="#ffd700"/>
+  <circle cx="570" cy="295" r="2" fill="#ffd700"/>
+  <circle cx="575" cy="295" r="2" fill="#ffd700"/>
+  <circle cx="580" cy="295" r="2" fill="#ffd700"/>
+  <text x="550" y="292" font-family="Arial, sans-serif" font-size="8">PWM</text>
+  
+  <!-- NRF24L01 Module -->
+  <rect x="480" y="360" width="60" height="40" fill="#1e3a8a" stroke="#000" stroke-width="1"/>
+  <text x="510" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">NRF24L01</text>
+  <text x="510" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Radio</text>
+  
+  <!-- Antenna for NRF -->
+  <line x1="540" y1="370" x2="580" y2="350" stroke="#000" stroke-width="2"/>
+  <circle cx="580" cy="350" r="3" fill="#ffd700"/>
+  
+  <!-- Brushless Motor -->
+  <circle cx="720" cy="310" r="25" fill="#34495e" stroke="#000" stroke-width="2"/>
+  <text x="720" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">1200KV</text>
+  <text x="720" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">Motor</text>
+  
+  <!-- Propeller -->
+  <ellipse cx="720" cy="310" rx="40" ry="8" fill="none" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="680" y1="310" x2="760" y2="310" stroke="#2c3e50" stroke-width="3"/>
+  
+  <!-- ESC (Electronic Speed Controller) -->
+  <rect x="680" y="360" width="50" height="30" fill="#8b4513" stroke="#000" stroke-width="1"/>
+  <text x="705" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">ESC</text>
+  
+  <!-- Servo 1 (Left Wing) -->
+  <rect x="320" y="340" width="40" height="20" fill="#e74c3c" stroke="#000" stroke-width="1"/>
+  <text x="340" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">Servo 1</text>
+  
+  <!-- Control Surface 1 -->
+  <rect x="300" y="310" width="80" height="10" fill="none" stroke="#2c3e50" stroke-width="1"/>
+  <line x1="340" y1="320" x2="340" y2="340" stroke="#000" stroke-width="1"/>
+  
+  <!-- Servo 2 (Right Wing) -->
+  <rect x="840" y="340" width="40" height="20" fill="#e74c3c" stroke="#000" stroke-width="1"/>
+  <text x="860" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">Servo 2</text>
+  
+  <!-- Control Surface 2 -->
+  <rect x="820" y="310" width="80" height="10" fill="none" stroke="#2c3e50" stroke-width="1"/>
+  <line x1="860" y1="320" x2="860" y2="340" stroke="#000" stroke-width="1"/>
+  
+  <!-- Solar Panel 1 -->
+  <rect x="300" y="200" width="120" height="60" fill="#191970" stroke="#000" stroke-width="2"/>
+  <g>
+    <rect x="310" y="210" width="25" height="40" fill="#4169e1" stroke="#000" stroke-width="0.5"/>
+    <rect x="340" y="210" width="25" height="40" fill="#4169e1" stroke="#000" stroke-width="0.5"/>
+    <rect x="370" y="210" width="25" height="40" fill="#4169e1" stroke="#000" stroke-width="0.5"/>
+    <rect x="395" y="210" width="25" height="40" fill="#4169e1" stroke="#000" stroke-width="0.5"/>
+  </g>
+  <text x="360" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Solar Panel 1</text>
+  <text x="360" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">5V</text>
+  
+  <!-- Solar Panel 2 -->
+  <rect x="780" y="200" width="120" height="60" fill="#191970" stroke="#000" stroke-width="2"/>
+  <g>
+    <rect x="790" y="210" width="25" height="40" fill="#4169e1" stroke="#000" stroke-width="0.5"/>
+    <rect x="820" y="210" width="25" height="40" fill="#4169e1" stroke="#000" stroke-width="0.5"/>
+    <rect x="850" y="210" width="25" height="40" fill="#4169e1" stroke="#000" stroke-width="0.5"/>
+    <rect x="875" y="210" width="25" height="40" fill="#4169e1" stroke="#000" stroke-width="0.5"/>
+  </g>
+  <text x="840" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Solar Panel 2</text>
+  <text x="840" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">5V</text>
+  
+  <!-- Power Management Unit -->
+  <rect x="570" y="200" width="60" height="40" fill="#9b59b6" stroke="#000" stroke-width="1"/>
+  <text x="600" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Power</text>
+  <text x="600" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Management</text>
+  
+  <!-- Connection Lines -->
+  <!-- Solar panels to power management -->
+  <line x1="420" y1="230" x2="570" y2="220" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="780" y1="230" x2="630" y2="220" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Power management to Arduino -->
+  <line x1="600" y1="240" x2="600" y2="290" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arduino to NRF24L01 -->
+  <line x1="560" y1="320" x2="520" y2="360" stroke="#00ff00" stroke-width="2"/>
+  <line x1="570" y1="330" x2="530" y2="360" stroke="#0000ff" stroke-width="2"/>
+  <line x1="580" y1="330" x2="540" y2="360" stroke="#ff0000" stroke-width="2"/>
+  
+  <!-- Arduino to Servos (PWM) -->
+  <line x1="565" y1="310" x2="360" y2="340" stroke="#ffa500" stroke-width="2"/>
+  <line x1="575" y1="310" x2="840" y2="340" stroke="#ffa500" stroke-width="2"/>
+  
+  <!-- Arduino to ESC -->
+  <line x1="630" y1="320" x2="680" y2="370" stroke="#ff69b4" stroke-width="2"/>
+  
+  <!-- ESC to Motor -->
+  <line x1="720" y1="360" x2="720" y2="335" stroke="#000" stroke-width="3"/>
+  
+  <!-- Power lines to ESC -->
+  <line x1="620" y1="240" x2="690" y2="360" stroke="#e74c3c" stroke-width="2"/>
+  
+  <!-- Component Labels and Specifications -->
+  <g transform="translate(50, 450)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Component Specifications:</text>
+    
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Main Controller:</text>
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="11">• Arduino Uno R3 (ATmega328P)</text>
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="11">• Operating Voltage: 5V</text>
+    <text x="0" y="70" font-family="Arial, sans-serif" font-size="11">• Digital I/O Pins: 14 (6 PWM outputs)</text>
+    
+    <text x="0" y="95" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Communication:</text>
+    <text x="0" y="110" font-family="Arial, sans-serif" font-size="11">• NRF24L01+ 2.4GHz Transceiver</text>
+    <text x="0" y="125" font-family="Arial, sans-serif" font-size="11">• Range: Up to 1km (line of sight)</text>
+    <text x="0" y="140" font-family="Arial, sans-serif" font-size="11">• Power: 3.3V, 13.5mA (RX mode)</text>
+    
+    <text x="0" y="165" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Propulsion:</text>
+    <text x="0" y="180" font-family="Arial, sans-serif" font-size="11">• 1200KV Brushless Motor</text>
+    <text x="0" y="195" font-family="Arial, sans-serif" font-size="11">• ESC: 20A-30A recommended</text>
+    <text x="0" y="210" font-family="Arial, sans-serif" font-size="11">• Propeller: 8x4 or 9x5 recommended</text>
+  </g>
+  
+  <g transform="translate(400, 450)">
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Control Surfaces:</text>
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="11">• 2x Standard Servos (9g recommended)</text>
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="11">• Operating Voltage: 4.8V-6V</text>
+    <text x="0" y="70" font-family="Arial, sans-serif" font-size="11">• Torque: 1.8kg-cm @ 4.8V</text>
+    
+    <text x="0" y="95" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Power System:</text>
+    <text x="0" y="110" font-family="Arial, sans-serif" font-size="11">• 2x Solar Panels (5V nominal each)</text>
+    <text x="0" y="125" font-family="Arial, sans-serif" font-size="11">• Series/Parallel configuration options</text>
+    <text x="0" y="140" font-family="Arial, sans-serif" font-size="11">• Voltage Regulation required</text>
+    <text x="0" y="155" font-family="Arial, sans-serif" font-size="11">• Battery backup recommended</text>
+    
+    <text x="0" y="180" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Dimensions (Typical):</text>
+    <text x="0" y="195" font-family="Arial, sans-serif" font-size="11">• Wingspan: 800-1000mm</text>
+    <text x="0" y="210" font-family="Arial, sans-serif" font-size="11">• Length: 600-700mm</text>
+  </g>
+  
+  <!-- Connection Legend -->
+  <g transform="translate(50, 700)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Connection Legend:</text>
+    <line x1="0" y1="15" x2="20" y2="15" stroke="#e74c3c" stroke-width="2"/>
+    <text x="25" y="19" font-family="Arial, sans-serif" font-size="10">Power (+5V)</text>
+    
+    <line x1="100" y1="15" x2="120" y2="15" stroke="#00ff00" stroke-width="2"/>
+    <text x="125" y="19" font-family="Arial, sans-serif" font-size="10">SPI MOSI</text>
+    
+    <line x1="200" y1="15" x2="220" y2="15" stroke="#0000ff" stroke-width="2"/>
+    <text x="225" y="19" font-family="Arial, sans-serif" font-size="10">SPI MISO</text>
+    
+    <line x1="300" y1="15" x2="320" y2="15" stroke="#ff0000" stroke-width="2"/>
+    <text x="325" y="19" font-family="Arial, sans-serif" font-size="10">SPI SCK</text>
+    
+    <line x1="400" y1="15" x2="420" y2="15" stroke="#ffa500" stroke-width="2"/>
+    <text x="425" y="19" font-family="Arial, sans-serif" font-size="10">PWM Signal</text>
+    
+    <line x1="520" y1="15" x2="540" y2="15" stroke="#ff69b4" stroke-width="2"/>
+    <text x="545" y="19" font-family="Arial, sans-serif" font-size="10">Motor Control</text>
+    
+    <line x1="650" y1="15" x2="670" y2="15" stroke="#000" stroke-width="3"/>
+    <text x="675" y="19" font-family="Arial, sans-serif" font-size="10">High Current</text>
+  </g>
+  
+  <!-- Pin Connection Details -->
+  <g transform="translate(750, 450)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Arduino Connections:</text>
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="10">D3 (PWM) → Servo 1 Signal</text>
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="10">D5 (PWM) → Servo 2 Signal</text>
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="10">D6 (PWM) → ESC Signal</text>
+    <text x="0" y="65" font-family="Arial, sans-serif" font-size="10">D11 (MOSI) → NRF MOSI</text>
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="10">D12 (MISO) → NRF MISO</text>
+    <text x="0" y="95" font-family="Arial, sans-serif" font-size="10">D13 (SCK) → NRF SCK</text>
+    <text x="0" y="110" font-family="Arial, sans-serif" font-size="10">D8 → NRF CE</text>
+    <text x="0" y="125" font-family="Arial, sans-serif" font-size="10">D9 → NRF CSN</text>
+    <text x="0" y="145" font-family="Arial, sans-serif" font-size="10">VCC → 5V Rail</text>
+    <text x="0" y="160" font-family="Arial, sans-serif" font-size="10">GND → Ground Rail</text>
+  </g>
+  
+  <!-- Power Distribution Notes -->
+  <g transform="translate(950, 450)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Power Notes:</text>
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="10">• Solar panels in series: 10V</text>
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="10">• 5V regulator required</text>
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="10">• Backup LiPo recommended</text>
+    <text x="0" y="65" font-family="Arial, sans-serif" font-size="10">• Motor on separate circuit</text>
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="10">• Current capacity: 2-3A</text>
+  </g>
+  
+  <!-- Weight and Balance indicator -->
+  <circle cx="600" cy="310" r="5" fill="#ff0000"/>
+  <text x="610" y="315" font-family="Arial, sans-serif" font-size="10">CG</text>
+  <line x1="590" y1="310" x2="610" y2="310" stroke="#ff0000" stroke-width="1"/>
+  <line x1="600" y1="300" x2="600" y2="320" stroke="#ff0000" stroke-width="1"/>
+  
+  <!-- Scale indicator -->
+  <g transform="translate(50, 750)">
+    <line x1="0" y1="0" x2="100" y2="0" stroke="#000" stroke-width="2"/>
+    <line x1="0" y1="-5" x2="0" y2="5" stroke="#000" stroke-width="2"/>
+    <line x1="100" y1="-5" x2="100" y2="5" stroke="#000" stroke-width="2"/>
+    <text x="50" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Scale: 100mm</text>
+  </g>
+  
+  <!-- Border -->
+  <rect x="5" y="5" width="1190" height="790" fill="none" stroke="#000" stroke-width="2"/>
+</svg>
